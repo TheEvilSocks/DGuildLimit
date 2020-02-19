@@ -1,4 +1,4 @@
-const redirectUrl = `https://discordapp.com/api/oauth2/authorize?response_type=token&client_id=679783114435854346&scope=guilds&redirect_uri=${encodeURIComponent(location.href)}`;
+const redirectUrl = `https://discordapp.com/api/oauth2/authorize?response_type=token&client_id=679783114435854346&scope=guilds&redirect_uri=${encodeURIComponent(location.href.substring(0, location.href.indexOf("#") > -1 ? location.href.indexOf("#") : undefined))}`;
 var state = 0;
 var checkClosedInterval;
 
