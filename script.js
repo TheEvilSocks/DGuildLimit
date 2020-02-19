@@ -18,7 +18,6 @@ if (window.opener) {
 
 
 
-let hash;
 if (location.hash === "") {
 
 	var newWin = window.open(redirectUrl, "GuildLimitWindow", "menubar=no,toolbar=no,location=yes,personalbar=no,dependent=yes,minimizable=no,scrollbars=no,dialog=yes,width=480,height=780");
@@ -52,8 +51,6 @@ function countGuilds(hash) {
 	document.getElementById("result").innerHTML = "Fetching data...";
 
 	getGuilds(userType, token).then(response => {
-		resp = response;
-		let num = response.length;
-		document.getElementById("result").innerHTML = "You are in " + num + "/100 guilds!";
+		document.getElementById("result").innerHTML = `You are in ${response.length}/100 guilds!`;
 	});
 }
